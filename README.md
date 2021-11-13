@@ -18,4 +18,4 @@ Eventually users will be able to play the program itself.
 
 ## License & copyright
 
-© Robust Sites
+© 2022 Robust Sites, Inc.
