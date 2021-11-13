@@ -11,6 +11,9 @@ Eventually users will be able to play the program itself.
 
 ## Contributors
 
+- Jesus Miranda <jmlivingfree@gmail.com>
+- Manuel Ventura <wow.mannyv@gmail.com>
+
 ---
 
 ## License & copyright
