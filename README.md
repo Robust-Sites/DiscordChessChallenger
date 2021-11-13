@@ -1,6 +1,18 @@
 # Discord Chess Challenger
 
-The purpose of this program is to make the game of chess accessable to users of 
-the Discord messaging application. Discord's API allows for the creation of bots
-that send messages and this application will make use of those bots for the messaging functionality. Users will be able to configure and play games against others and eventually the bots themselves by messaging each other. 
+**Version 0.1.0**
 
+The purpose of this program is to make the game of chess accessible to users of
+the Discord messaging application. Discord's API allows for the recruitment of "bots"
+that send messages which this app will make use of to configure and facilitate chess games between users.
+Eventually users will be able to play the program itself. 
+
+---
+
+## Contributors
+
+---
+
+## License & copyright
+
+© Robust Sites
