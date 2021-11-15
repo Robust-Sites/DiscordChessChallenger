@@ -17,7 +17,10 @@ def draw_board(dictionary):
         final += "\n"
         row += 1
     return final
-print(draw_board(
+
+#print actual coordinate
+
+print(draw_board2(
     {
     1: [1,2,3,4,5,6,7,8],
     2: [1,2,3,4,5,6,7,8],
