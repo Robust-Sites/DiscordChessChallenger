@@ -1,3 +1,4 @@
+#11/12/2021
 #Visual repr. of chess board
 # if piece is empty
 # 8x8 grid
