@@ -1,4 +1,5 @@
 #11/12/2021
+
 #Visual repr. of chess board
 # if piece is empty
 # 8x8 grid
@@ -77,9 +78,7 @@ def eight_rows(dictionary={}, char="#",row_count=8):
         final +="\n"
         rows += 1  
     return final
-print(eight_rows({
-    1: [1,3]
-}))
+
 #    HashTable key value 
 #    keys will be 1-8
 dictionary = {
