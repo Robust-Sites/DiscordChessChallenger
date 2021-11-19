@@ -17,7 +17,24 @@ def draw_board(dictionary):
         final += "\n"
         row += 1
     return final
-print(draw_board(
+
+#print actual coordinate
+
+def draw_coordinates():
+    columns = ['A','B','C','D','E','F','G','H']
+    rows = [1,2,3,4,5,6,7,8]
+
+    final = ""
+    for row in rows:
+        line = ""
+        for column in columns:
+            position = f"{column}{row} "
+            line += position  
+        line += "\n"
+        final += line
+    return final
+
+print(draw_board2(
     {
     1: [1,2,3,4,5,6,7,8],
     2: [1,2,3,4,5,6,7,8],
