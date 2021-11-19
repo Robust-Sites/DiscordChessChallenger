@@ -125,19 +125,16 @@ def new_board(dictionary):
             coordinate = current_column + current_row
             
             #Accessing positions in keys
+            coordinate_string = ""
             for key in dictionary:
-                coordinate_array = active_pieces[key]
-                key_values = ""
+                pass 
                 #Fill key_values with each value in key
-                for value in key:
-                    key_values += value
-
-                position = ""
-                coordinate_found = key_values.find(coordinate) > -1
-                if coordinate_found:
-                    position += key + " "
-                else:
-                    position += f"{coordinate} "
+            position = ""
+                
+            if 2 + 2 == 5:
+                position += key + " "
+            else:
+                position += f"{coordinate} "
 
             column_index += 1
             line += position
