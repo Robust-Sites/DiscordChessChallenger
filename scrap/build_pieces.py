@@ -85,10 +85,8 @@ def eight_rows(dictionary={}, char="#",row_count=8):
 #    "Manny": True
 # }
 # print(dictionary["Manny"])
-def new_board(dictionary):
-    columns = ['A','B','C','D','E','F','G','H']
-    rows = [1,2,3,4,5,6,7,8]
-    test_table = {
+
+test_table = {
     1: [1,2,3,4,5,6,7,8],
     2: [1,2,3,4,5,6,7,8],
     3: False,
@@ -97,4 +95,54 @@ def new_board(dictionary):
     6: False,
     7: [1,2,3,4,5,6,7,8],
     8: [1,2,3,4,5,6,7,8]
-    }
+}
+#New test table to print 
+active_pieces = {
+    "QQ": ['A1'], #Queen
+    "KK": ['F2'], #King
+}
+
+#Pass a dictionary to same draw function that makes coordinates
+#If dictionary contains specific values, ""QQ,'KK', looks in array,
+#if array has value, it will have at least one coordinate, instead of coordinate
+
+#Thinking of making a position string to check in key values
+
+def new_board(dictionary):
+    columns = ['A','B','C','D','E','F','G','H']
+    rows = [1,2,3,4,5,6,7,8] 
+    final_string = ""
+    row_index = 0
+    for row in rows:
+        # Working with a horizontal row
+        line = ""
+        column_index = 0
+        for column in columns:
+            #Accessing each piece in a row!
+            #Functionality here
+            current_column = (columns[column_index])
+            current_row = str(rows[row_index]) #Refactor to only work with integers
+            coordinate = current_column + current_row
+            
+            #Accessing positions in keys
+            for key in dictionary:
+                coordinate_array = active_pieces[key]
+                key_values = ""
+                #Fill key_values with each value in key
+                for value in key:
+                    key_values += value
+
+                position = ""
+                coordinate_found = key_values.find(coordinate) > -1
+                if coordinate_found:
+                    position += key + " "
+                else:
+                    position += f"{coordinate} "
+
+            column_index += 1
+            line += position
+        line += "\n"    
+        final_string += line
+        row_index += 1
+    return final_string
+print(new_board(active_pieces))
