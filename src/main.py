@@ -34,8 +34,7 @@ def draw_coordinates():
         final += line
     return final
 
-print(draw_board2(
-    {
+test_1 = {
     1: [1,2,3,4,5,6,7,8],
     2: [1,2,3,4,5,6,7,8],
     3: False,
@@ -44,5 +43,5 @@ print(draw_board2(
     6: False,
     7: [1,2,3,4,5,6,7,8],
     8: [1,2,3,4,5,6,7,8]
-    }
-))
+}
+print(draw_coordinates())

@@ -29,7 +29,7 @@ def draw_board():
             row += "#"
         index += 1
     print(row)
-draw_board()
+#draw_board()
 def draw_row(n):
     #n is string
     values = []
@@ -45,7 +45,7 @@ def draw_row(n):
         index += 1
     return row
 
-print(draw_row("128"))
+#print(draw_row("128"))
 #any amount of rows, and positions within specific rows
 def draw_row_array(a):
     #a is array
@@ -58,7 +58,7 @@ def draw_row_array(a):
             row += "#"
         index += 1
     return row
-print(draw_row_array([3,4,7]))
+#print(draw_row_array([3,4,7]))
 
 #Have it draw 8 rows, if dictionary has one of rows as key
 #Pass it value of array, what is in array, call draw row array
@@ -81,7 +81,20 @@ def eight_rows(dictionary={}, char="#",row_count=8):
 
 #    HashTable key value 
 #    keys will be 1-8
-dictionary = {
-   "Manny": True
-}
-print(dictionary["Manny"])
+# dictionary = {
+#    "Manny": True
+# }
+# print(dictionary["Manny"])
+def new_board(dictionary):
+    columns = ['A','B','C','D','E','F','G','H']
+    rows = [1,2,3,4,5,6,7,8]
+    test_table = {
+    1: [1,2,3,4,5,6,7,8],
+    2: [1,2,3,4,5,6,7,8],
+    3: False,
+    4: False,
+    5: False,
+    6: False,
+    7: [1,2,3,4,5,6,7,8],
+    8: [1,2,3,4,5,6,7,8]
+    }
