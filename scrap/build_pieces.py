@@ -98,8 +98,11 @@ test_table = {
 }
 #New test table to print 
 active_pieces = {
-    "QQ": ['A1'], #Queen
-    "KK": ['F2'], #King
+    "QQ": ['A1', 'B2'], #Queen
+    "LL": ['C2'],
+    "MM": ['C3'],
+    "EE": ['C4'],
+    "KK": ['F2', 'G7'], #King
 }
 
 #Pass a dictionary to same draw function that makes coordinates
@@ -107,6 +110,21 @@ active_pieces = {
 #if array has value, it will have at least one coordinate, instead of coordinate
 
 #Thinking of making a position string to check in key values
+def make_coordinate_string(column_i, row_i):
+    columns = ['A','B','C','D','E','F','G','H']
+    rows = [1,2,3,4,5,6,7,8] 
+
+    current_column = (columns[column_i])
+    current_row = str(rows[row_i]) #Refactor to only work with integers
+    coordinate = current_column + current_row
+    return coordinate
+def fill_current_position(coordinate_found_test, coordinate):
+    if coordinate_found_test:
+        correct_key = "-- "
+        # print(key)
+    else:
+        correct_key = f"{coordinate} "   
+    return correct_key
 
 def new_board(dictionary):
     columns = ['A','B','C','D','E','F','G','H']
@@ -119,29 +137,62 @@ def new_board(dictionary):
         column_index = 0
         for column in columns:
             #Accessing each piece in a row!
-            #Functionality here
-            current_column = (columns[column_index])
-            current_row = str(rows[row_index]) #Refactor to only work with integers
-            coordinate = current_column + current_row
-            
-            #Accessing positions in keys
-            coordinate_string = ""
-            for key in dictionary:
-                coordinate_values = ""
-                for value in dictionary[key]:
-                    coordinate_values += value
-                #Fill key_values with each value in key
-                position = ""
-                coordinate_found = coordinate_values.find(coordinate) > -1
-                if coordinate_found:
-                    position += key + " "
-                else:
-                    position += f"{coordinate} "
 
-            column_index += 1
+            coordinate = make_coordinate_string(column_index, row_index)
+            position = "" #value which will be put to line
+
+            bucket_index = 1
+            bucket = ""
+            for key, value in dictionary.items(): #in this loop, we are accessing EACH key
+                #Make coordinate found work
+                value_string = key + ''.join(value)
+                coordinate_found = coordinate in value_string
+                #print(coordinate_found)
+                position = fill_current_position(coordinate_found, coordinate)
+                
+                if bucket_index <= 9:
+                    bucket += f"{position} "
+                else:
+                    bucket += f"\n{position}"
+                    bucket_index = 1
+            print(bucket)
+            
             line += position
+            column_index += 1
         line += "\n"    
         final_string += line
         row_index += 1
     return final_string
-print(new_board(active_pieces))
+#print(new_board(active_pieces))
+
+def new_board2(dictionary):
+    columns = ['A','B','C','D','E','F','G','H']
+    rows = [1,2,3,4,5,6,7,8] 
+    final_string = ""
+    #######Access variable keys
+    coordinates = {}
+    test = {
+        2: "GAY"
+    }
+    key = test[2]
+    coordinates
+    #######
+    row_index = 0
+    for row in rows:
+        # Working with a horizontal row
+        line = ""
+        column_index = 0
+        for column in columns:
+            #Accessing each position on board
+            current_marker = ""
+            
+
+def flipped_active_pieces(dictionary):
+    fliptionary = {}
+    values = list(dictionary.keys())
+    keys = list(dictionary.values())
+    print(f"{keys} \n {values}")
+    for key in keys:
+        
+
+flipped_active_pieces(active_pieces)
