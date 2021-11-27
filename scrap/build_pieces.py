@@ -3,6 +3,9 @@
 #Visual repr. of chess board
 # if piece is empty
 # 8x8 grid
+from typing import KeysView
+
+
 def make_board(object):
     grid = [[0,0,0,0,0,0,0,0],
             [0,0,0,0,0,0,0,0],
@@ -189,10 +192,17 @@ def new_board2(dictionary):
 
 def flipped_active_pieces(dictionary):
     fliptionary = {}
-    values = list(dictionary.keys())
-    keys = list(dictionary.values())
-    print(f"{keys} \n {values}")
-    for key in keys:
-        
+    for values in dictionary.values():
+        key_index = 1
+        keys = []
+        keys.append(dictionary[key_index])
+        for value in values:
+             #Save value as a key
+            current_key = value 
+            #Place key as value
+            current_value = keys[key_index]
+            current_dictionary = {current_key: current_value}
+            print(current_dictionary)
+        key_index += 1
 
 flipped_active_pieces(active_pieces)
