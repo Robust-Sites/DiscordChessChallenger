@@ -192,10 +192,10 @@ def new_board2(dictionary):
 
 def flipped_active_pieces(dictionary):
     fliptionary = {}
-    for values in dictionary.values():
-        key_index = 1
+    for key, values in dictionary.items():
+        key_index = 0
         keys = []
-        keys.append(dictionary[key_index])
+        keys.append(key)
         for value in values:
              #Save value as a key
             current_key = value 
