@@ -190,7 +190,7 @@ def new_board2(dictionary):
             current_marker = ""
             
 
-def flipped_active_pieces(dictionary):
+def flip_dictionary(dictionary):
     fliptionary = {}
     for key, values in dictionary.items():
         key_index = 0
@@ -205,5 +205,3 @@ def flipped_active_pieces(dictionary):
             fliptionary.update(current_dictionary_pair)
         key_index += 1
     return fliptionary
-
-print(flipped_active_pieces(active_pieces))
