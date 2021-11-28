@@ -201,8 +201,9 @@ def flipped_active_pieces(dictionary):
             current_key = value 
             #Place key as value
             current_value = keys[key_index]
-            current_dictionary = {current_key: current_value}
-            print(current_dictionary)
+            current_dictionary_pair = {current_key: current_value}
+            fliptionary.update(current_dictionary_pair)
         key_index += 1
+    return fliptionary
 
-flipped_active_pieces(active_pieces)
+print(flipped_active_pieces(active_pieces))
