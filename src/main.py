@@ -1,12 +1,19 @@
 import chess_board_render as r
 
+# Validation for piece quantities
 active_pieces = {
     "QQ": ['A1', 'B2'], #Queen
-    "LL": ['C2'],
-    "MM": ['C3'],
-    "EE": ['C4'],
-    "KK": ['F2', 'G7'], #King
+    "RR": ['C3'],
+    "BB": ['C4'],
+    "KN": ['F2', 'G7'], #King
+    "PP": ['C7'],
+    "KI": ['H1']
 }
+
+
+def main():
+    print(r.draw_board(active_pieces))
+
 
 if __name__ == "__main__":
     main()

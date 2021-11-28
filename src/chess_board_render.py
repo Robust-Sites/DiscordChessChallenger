@@ -1,18 +1,3 @@
-def draw_coordinates():
-    columns = ['A','B','C','D','E','F','G','H']
-    rows = [1,2,3,4,5,6,7,8]
-
-    final = ""
-    for row in rows:
-        line = ""
-        for column in columns:
-            position = f"{column}{row} "
-            line += position  
-        line += "\n"
-        final += line
-    return final
-
-
 def flip_dictionary(dictionary):
     fliptionary = {}
     for key, values in dictionary.items():
@@ -28,6 +13,37 @@ def flip_dictionary(dictionary):
             fliptionary.update(current_dictionary_pair)
         key_index += 1
     return fliptionary
+
+
+def draw_board(dictionary):
+    columns = ['A','B','C','D','E','F','G','H']
+    rows = [1,2,3,4,5,6,7,8] 
+    flipped_dictionary = flip_dictionary(dictionary)
+    final_string = ""
+    row_index = 0
+    for row in rows:
+        row_string = ""
+        column_index = 0
+        for column in columns:
+            #Format for position: 
+            # print(f"{columns[column_index]} {rows[row_index]}")
+            
+            #Check flipped dictionary
+            current_coordinate = f"{columns[column_index]}{rows[row_index]}"
+            #Fill position
+            position = ""
+            if current_coordinate in flipped_dictionary:
+                position = f"{flipped_dictionary[current_coordinate]} "
+            else:
+                position = f"{current_coordinate} "
+            row_string += position
+            column_index += 1
+        row_string += "\n"
+        final_string += row_string
+        row_index += 1
+    print(final_string)
+    
+
 
 if __name__ == "__main__":
     main()

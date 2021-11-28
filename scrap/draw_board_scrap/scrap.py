@@ -29,3 +29,16 @@ test_1 = {
     8: [1,2,3,4,5,6,7,8]
 }
 
+def draw_coordinates():
+    columns = ['A','B','C','D','E','F','G','H']
+    rows = [1,2,3,4,5,6,7,8]
+
+    final = ""
+    for row in rows:
+        line = ""
+        for column in columns:
+            position = f"{column}{row} "
+            line += position  
+        line += "\n"
+        final += line
+    return final
