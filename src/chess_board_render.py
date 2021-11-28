@@ -15,7 +15,7 @@ def flip_dictionary(dictionary):
     return fliptionary
 
 
-def draw_board(dictionary):
+def draw_board(dictionary): 
     columns = ['A','B','C','D','E','F','G','H']
     rows = [1,2,3,4,5,6,7,8] 
     flipped_dictionary = flip_dictionary(dictionary)
@@ -38,10 +38,11 @@ def draw_board(dictionary):
                 position = f"{current_coordinate} "
             row_string += position
             column_index += 1
-        row_string += "\n"
+        row_string += "\n" #Will add a extra \n after last row unless if statement is implemented
         final_string += row_string
         row_index += 1
     print(final_string)
+
     
 
 

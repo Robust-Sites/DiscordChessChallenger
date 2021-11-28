@@ -12,7 +12,7 @@ active_pieces = {
 
 
 def main():
-    print(r.draw_board(active_pieces))
+    r.draw_board(active_pieces)
 
 
 if __name__ == "__main__":
