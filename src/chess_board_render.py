@@ -29,3 +29,5 @@ def flip_dictionary(dictionary):
         key_index += 1
     return fliptionary
 
+if __name__ == "__main__":
+    main()

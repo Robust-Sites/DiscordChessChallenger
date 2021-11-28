@@ -7,4 +7,6 @@ active_pieces = {
     "EE": ['C4'],
     "KK": ['F2', 'G7'], #King
 }
-print(r.flip_dictionary(active_pieces))
+
+if __name__ == "__main__":
+    main()
