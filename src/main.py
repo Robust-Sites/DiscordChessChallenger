@@ -12,7 +12,7 @@ active_pieces = {
 
 
 def main():
-    print(r.flip_dictionary(active_pieces))
+    print(r.max_piece_count(active_pieces))
 
 
 if __name__ == "__main__":
