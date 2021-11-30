@@ -57,8 +57,7 @@ def max_piece_count(dictionary):
         'KN': 2,
         'BB': 2
     }
-    for key, value in max_pieces.items():
-        return (f"{key} | {value}")
+    
 
 
 ####inner methods for validate dictionary ENDS here####
