@@ -64,7 +64,12 @@ def coordinate_translator(coordinate_tuple):
     #tuple example (1,6) -> ""
     return_string = ""
     letters = ['A','B','C','D','E','F','G','H']
-    coordinate_tuple[0]
+    first_value_index = coordinate_tuple[0] - 1
+    letter = letters[first_value_index]
+    return_string += letter
+    return_string += str(coordinate_tuple[1])
+    return return_string
+    
 
 ####inner methods for validate dictionary ENDS here####
 if __name__ == "__main__":

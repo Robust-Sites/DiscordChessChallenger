@@ -12,7 +12,7 @@ active_pieces = {
 
 
 def main():
-    print(r.draw_board(active_pieces))
+    print(r.coordinate_translator((8,3)))
 
 
 if __name__ == "__main__":
