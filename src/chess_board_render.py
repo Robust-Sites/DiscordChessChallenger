@@ -41,10 +41,26 @@ def draw_board(dictionary):
         row_string += "\n" #Will add a extra \n after last row unless if statement is implemented
         final_string += row_string
         row_index += 1
-    print(final_string)
+    return final_string
 
+
+def validate_dictionary(dictionary):
     
+    pass
+####inner methods for validate dictionary STARTS here####
+def max_piece_count(dictionary):
+    max_pieces = {
+        'PP': 16,
+        'KI': 2,
+        'QQ': 2,
+        'RR': 2,
+        'KN': 2,
+        'BB': 2
+    }
+    for key, value in max_pieces.items():
+        return (f"{key} | {value}")
 
 
+####inner methods for validate dictionary ENDS here####
 if __name__ == "__main__":
     main()
