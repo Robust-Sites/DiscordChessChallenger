@@ -60,6 +60,11 @@ def max_piece_count(dictionary):
     for key, value in max_pieces.items():
         return (f"{key} | {value}")
 
+def coordinate_translator(coordinate_tuple):
+    #tuple example (1,6) -> ""
+    return_string = ""
+    letters = ['A','B','C','D','E','F','G','H']
+    coordinate_tuple[0]
 
 ####inner methods for validate dictionary ENDS here####
 if __name__ == "__main__":
