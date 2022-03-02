@@ -2,7 +2,7 @@ import chess_board_render as r
 
 # Validation for piece quantities
 active_pieces = {
-    "QQ": ['A1', 'B2'], #Queen
+    "QQ": ['A1', 'B2', 'H7'], #Queen
     "RR": ['C3'],
     "BB": ['C4'],
     "KN": ['F2', 'G7'], #King
@@ -12,7 +12,7 @@ active_pieces = {
 
 
 def main():
-    r.draw_board(active_pieces)
+    print(r.max_piece_count(active_pieces))
 
 
 if __name__ == "__main__":
