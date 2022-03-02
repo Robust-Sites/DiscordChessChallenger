@@ -57,17 +57,16 @@ def max_piece_count(dictionary):
         'KN': 2,
         'BB': 2
     }
-    for key, value in max_pieces.items():
-        return (f"{key} | {value}")
+    return 
 
-def coordinate_translator(coordinate_tuple):
+def coordinate_translator(coordinate):
     #tuple example (1,6) -> ""
     return_string = ""
     letters = ['A','B','C','D','E','F','G','H']
-    first_value_index = coordinate_tuple[0] - 1
+    first_value_index = coordinate[0] - 1
     letter = letters[first_value_index]
     return_string += letter
-    return_string += str(coordinate_tuple[1])
+    return_string += str(coordinate[1])
     return return_string
     
 

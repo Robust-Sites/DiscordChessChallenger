@@ -1,4 +1,5 @@
 import chess_board_render as r
+import pieces as p
 
 # Validation for piece quantities
 active_pieces = {
@@ -12,7 +13,7 @@ active_pieces = {
 
 
 def main():
-    print(r.coordinate_translator((8,3)))
+   p.make_starting_pieces()
 
 
 if __name__ == "__main__":
