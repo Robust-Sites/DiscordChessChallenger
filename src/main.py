@@ -9,10 +9,13 @@ import chess_board_render as r
 #     "PP": ['C7'],
 #     "KI": ['H1']
 # }
-
+starting_board = {
+    'A1': 'KI',
+    'B1': 'KI'}
 
 def main():
-    pass
+    print(r.render_board(starting_board))
+    pass 
 
 
 if __name__ == "__main__":
