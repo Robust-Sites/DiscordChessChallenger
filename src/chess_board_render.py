@@ -11,7 +11,7 @@ def render_board(active_pieces={}):
 
     #rows horizontal - columns vertical
     #list(active_pieces.values()).__contains__()
-    rows = ['A', 'B','C','D','E','F','G','H']
+    rows = ['H','G','F','E','D','C','B','A']
     columns = ['1','2','3','4','5','6','7','8']
     board = ''
     for row in rows:
