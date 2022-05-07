@@ -1,4 +1,3 @@
-from unicodedata import name
 from piece import Piece
 
 class King(Piece):
