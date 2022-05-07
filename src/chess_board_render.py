@@ -1,16 +1,11 @@
 import main
-starting_board = {
-    'A1': 'KI',
-    'B1': 'KI'}
 
+# example_active_pieces= {
+#     'A1': 'KI',
+#     'B1': 'P'
+# }
 
 def render_board(active_pieces={}):
-    # active pieces will auto fill with empty dict. 
-    # { "coordinate": "Piece"}
-    # just convert active pieces to what player will see.
-
-    #rows horizontal - columns vertical
-    #list(active_pieces.values()).__contains__()
     rows = ['H','G','F','E','D','C','B','A']
     columns = ['1','2','3','4','5','6','7','8']
     board = ''
@@ -26,6 +21,5 @@ def render_board(active_pieces={}):
         board += line
     return board
 
-####inner methods for validate dictionary ENDS here####
 if __name__ == "__main__":
     main.main()
