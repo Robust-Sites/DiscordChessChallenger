@@ -4,9 +4,7 @@ import knight as k
 
 def main():
     print(r.render_board())
-    pawn = p.Pawn("C2", "Black")
-    knight = k.Knight("C2", "Black")
-    knight.possible_moves(1,2)
+    print(knight.possible_moves(1,1))
     pass 
 
 

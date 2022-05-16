@@ -11,11 +11,18 @@ class Knight(Piece):
         
         row = row_index - 2
 
+        def within_bounds(value):
+            if (value < 0 or value > 7):
+                return False
+            else:
+                return True
+
+        #function will always check 5 columns for moves (24-25)
         while (row - row_index < 3):
-            if (row >= 0 and row <= 7):
+            if (within_bounds(row)):   
                 column = column_index - 2
                 while (column - column_index < 3):
-                    if (column >= 0 and column <= 7):
+                    if (within_bounds(column)):
                         if (abs(row - row_index) + abs(column - column_index) == 3):
                             allowed_moves.append(f'{rows[row]}{columns[column]}')
                     column += 1
