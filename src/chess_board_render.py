@@ -1,10 +1,3 @@
-import main
-
-# example_active_pieces= {
-#     'A1': 'KI',
-#     'B1': 'P'
-# }
-
 def render_board(active_pieces={}):
     rows = ['H','G','F','E','D','C','B','A']
     columns = ['1','2','3','4','5','6','7','8']
