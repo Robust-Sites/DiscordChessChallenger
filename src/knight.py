@@ -2,8 +2,7 @@ from piece import Piece
 
 class Knight(Piece):
     def __init__(self, coordinate, color):
-        self.coordinate = coordinate
-        self.color = color
+        super().__init__(coordinate, color)
 
     def possible_moves(self, row_index, column_index):
         rows = ['A','B','C','D','E','F','G','H']
