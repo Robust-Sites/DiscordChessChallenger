@@ -4,6 +4,9 @@ import knight as k
 
 def main():
     print(r.render_board())
+    pawn = p.Pawn((0, 1), 'white', True)
+    print()
+    print(pawn.possible_moves())
 
 
 if __name__ == "__main__":
