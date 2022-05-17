@@ -7,11 +7,12 @@ class Pawn(Piece):
     def possible_moves(self):
         possible_moves = []
         at_start = self.at_start()
-        if at_start:  
-            possible_moves.append(self.forward(2))
+
         possible_moves.append(self.forward())
         possible_moves.append(self.take_left())
         possible_moves.append(self.take_right())
+        if at_start:  
+            possible_moves.append(self.forward(2))
         return possible_moves
 
     def at_start(self):
