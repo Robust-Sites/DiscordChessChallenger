@@ -1,22 +1,17 @@
 from piece import Piece 
 
 class Pawn(Piece):
-    move_set = []
     def __init__(self, coordinate, color):
         super().__init__(coordinate, color)
 
     def possible_moves(self):
         possible_moves = []
-        white = self.white() 
-        x = self.coordinate[0]
-        y = self.coordinate[1]
         at_start = self.at_start()
-        if white: 
-            if at_start: 
-                possible_moves.append(self.forward())
-        else:
-            if at_start:
-                possible_moves.append(self.forward())
+        if at_start:  
+            possible_moves.append(self.forward(2))
+        possible_moves.append(self.forward())
+        possible_moves.append(self.take_left())
+        possible_moves.append(self.take_right())
         return possible_moves
 
     def at_start(self):
@@ -28,11 +23,35 @@ class Pawn(Piece):
     def white(self):
         return self.color == 'white'
 
-    def forward(self):
+    def forward(self, counter=1):
         if self.white():
-            return (self.coordinate[0],  self.coordinate[1] + 1)
+            return (self.coordinate[0],  self.coordinate[1] + counter)
         else: 
-            return (self.coordinate[0],  self.coordinate[1] - 1)
+            return (self.coordinate[0],  self.coordinate[1] - counter)
+
+    def left(self, counter=1):
+        if self.white():
+            return (self.coordinate[0],  self.coordinate[1] + counter)
+        else: 
+            return (self.coordinate[0],  self.coordinate[1] - counter)
+
+    def right(self, counter=1):
+        if self.white():
+            return (self.coordinate[0],  self.coordinate[1] + counter)
+        else: 
+            return (self.coordinate[0],  self.coordinate[1] - counter)
+
+    def take_left(self, counter=1):
+        if self.white():
+            return (self.coordinate[0] - counter, self.coordinate[1] + counter)
+        else:
+            return (self.coordinate[0] + counter, self.coordinate[1] - counter)
+
+    def take_right(self, counter=1):
+        if self.white():
+            return (self.coordinate[0] + counter, self.coordinate[1] + counter)
+        else:
+            return (self.coordinate[0] - counter, self.coordinate[1] - counter)
 
         
 
