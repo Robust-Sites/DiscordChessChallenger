@@ -14,12 +14,19 @@ class Rook(Piece):
         column_index = 0
 
         def append_row(row):
-            invalid_row = self.coordinate[0]
+            invalid_row = self.coordinate[0]            
             if row != invalid_row:
                 possible_moves.append((row, self.coordinate[1]))
         
         def append_column(column):
-            
+            invalid_column = self.coordinate[1]           
+            if column != invalid_column:
+                possible_moves.append((self.coordinate[0], column))
 
         while row_index <= max_value:
             append_row(row_index)
+            row_index += 1
+        while column_index <= max_value:
+            append_column(column_index)
+            column_index += 1
+        return possible_moves
