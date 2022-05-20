@@ -5,30 +5,35 @@ class Rook(Piece):
         super().__init__(coordinate, color)
         self.if_moved = False
 
-    def possible_moves(self, row, column):
+    def possible_moves(self):
         possible_moves = []
-        max_value = 7
-
-        row_index = 0
-        column_index = 0
-
-        def append_row(row):
-            invalid_row = self.coordinate[0]            
-            if row != invalid_row:
-                possible_moves.append((row, self.coordinate[1]))
-        
-        def append_column(column):
-            invalid_column = self.coordinate[1]           
-            if column != invalid_column:
-                possible_moves.append((self.coordinate[0], column))
-
-        while row_index <= max_value:
-            append_row(row_index)
-            row_index += 1
-        while column_index <= max_value:
-            append_column(column_index)
-            column_index += 1
+        rows = self.get_rows(self.coordinate[1])
+        columns = self.get_columns(self.coordinate[0])
+        for row in rows:
+            possible_moves.append((row, self.coordinate[1]))
+        for column in columns:
+            possible_moves.append((self.coordinate[0], column))
         return possible_moves
+        
+    def get_rows(self, column):
+        allowed_rows = []
+        row = 0
+        max_row = 7
+        while row <= max_row:
+            allowed_rows.append(row)
+            row += 1
+        return allowed_rows
+    
+    def get_columns(self, row):
+        allowed_columns = []
+        column = 0
+        max_column = 7
+        while column <= max_column:
+            allowed_columns.append(column)
+            column += 1
+        return allowed_columns   
+    
+
     
 if __name__ == "__main__":
     main()

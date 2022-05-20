@@ -5,8 +5,8 @@ import rook as r
 
 def main():
    
-    rook = r.Rook('00', 'black')
-    print(rook.possible_moves(0,0))
+    rook = r.Rook('55', 'black')
+    print(rook.possible_moves())
 
 
 if __name__ == "__main__":
