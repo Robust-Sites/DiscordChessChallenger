@@ -5,9 +5,8 @@ class Rook(Piece):
         super().__init__(coordinate, color)
         self.if_moved = False
 
-    def possible_moves(self):
+    def possible_moves(self, row, column):
         possible_moves = []
-        at_start = self.at_start()
         max_value = 7
 
         row_index = 0
@@ -30,3 +29,6 @@ class Rook(Piece):
             append_column(column_index)
             column_index += 1
         return possible_moves
+    
+if __name__ == "__main__":
+    main()
