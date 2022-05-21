@@ -6,7 +6,7 @@ import bishop as b
 
 def main():
    
-    bishop = b.Bishop((4,4), 'Black')
+    bishop = b.Bishop((7,7), 'Black')
     print(bishop.possible_moves())
 
 
