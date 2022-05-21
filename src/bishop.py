@@ -33,14 +33,15 @@ class Bishop(Piece):
         min_value = 0
         max_value = 7
         coordinate_copy = [self.coordinate[0], self.coordinate[1]]
-        while coordinate_copy[0] < max_value or coordinate_copy[1] < max_value:
-            coordinate_copy[0] += 1
+        while coordinate_copy[0] > min_value or coordinate_copy[1] < max_value:
+            coordinate_copy[0] -= 1
             coordinate_copy[1] += 1
-        while coordinate_copy[0] >= min_value or coordinate_copy[1] >= min_value:
+        while coordinate_copy[0] <= max_value or coordinate_copy[1] >= min_value:
             if coordinate_copy[0] != self.coordinate[0] and coordinate_copy[1] != self.coordinate[1]:
                 allowed_moves.append((coordinate_copy[0], coordinate_copy[1]))
-            coordinate_copy[0] -= 1
+            coordinate_copy[0] += 1
             coordinate_copy[1] -= 1
+        return allowed_moves
 
 if __name__ == "__main__":
     main()
