@@ -1,12 +1,13 @@
 import chess_board_render as r
 import pawn as p
-import knight as k
+import knight as n
+import rook as r
+import bishop as b
 
 def main():
-    print(r.render_board())
-    pawn = p.Pawn((3, 3), 'white')
-    print()
-    print(pawn.possible_moves())
+   
+    bishop = b.Bishop((7,7), 'Black')
+    print(bishop.possible_moves())
 
 
 if __name__ == "__main__":
