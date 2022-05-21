@@ -7,9 +7,11 @@ class Bishop(Piece):
     def possible_moves(self):
         possible_moves = []
         y_equals_x_set = self.y_equals_x_moves()
-        possible_moves.append(y_equals_x_set)
+        for coordinate in y_equals_x_set:
+            possible_moves.append(coordinate)
         y_equals_negative_x_set = self.y_equals_negative_x_moves()
-        possible_moves.append(y_equals_negative_x_set)
+        for coordinate in y_equals_negative_x_set:
+            possible_moves.append(coordinate)
         return possible_moves
         
 
