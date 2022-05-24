@@ -13,10 +13,11 @@ class Pawn(Piece):
         possible_moves.append(self.take_right())
         if at_start:  
             possible_moves.append(self.forward(2))
-        return self.filter_valid_moves(possible_moves)
+        return self.filter_moves_out_of_bounds(possible_moves)
 
+    #checks for out of bounds not collisions
     @staticmethod
-    def filter_valid_moves(array_of_possible_moves):
+    def filter_moves_out_of_bounds(array_of_possible_moves):
         valid_moves = []
         for coordinate in array_of_possible_moves:
             x, y = coordinate[0], coordinate[1] 
