@@ -5,9 +5,7 @@ import rook as r
 import bishop as b
 
 def main():
-   
-    bishop = b.Bishop((7,7), 'Black')
-    print(bishop.possible_moves())
+    pass   
 
 
 if __name__ == "__main__":
