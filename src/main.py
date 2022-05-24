@@ -6,7 +6,10 @@ import bishop as b
 
 def main():
     pass   
+<<<<<<< HEAD
 
+=======
+>>>>>>> bishop
 
 if __name__ == "__main__":
     main()
