@@ -2,7 +2,12 @@ from piece import Piece
 
 class Pawn(Piece):
     def __init__(self, coordinate, color):
-        super().__init__(coordinate, color)
+        x = coordinate[0]
+        y = coordinate[1]
+        super().__init__(x, y, color)
+        self.x = x
+        self.y = y
+
 
     def possible_moves(self):
         possible_moves = []
@@ -20,7 +25,7 @@ class Pawn(Piece):
     def filter_moves_out_of_bounds(array_of_possible_moves):
         valid_moves = []
         for coordinate in array_of_possible_moves:
-            x, y = coordinate[0], coordinate[1] 
+            x, y = coordinate[0], coordinate[1]
             if (x > 7 or x < 0) or (y > 7 or y < 0):
                 continue
             else:
@@ -29,42 +34,42 @@ class Pawn(Piece):
 
     def at_start(self):
         if self.white():
-            return self.coordinate[1] == 1 
+            return self.y == 1 
         else:
-            return self.coordinate[1] == 6 
+            return self.y == 6 
 
     def white(self):
         return self.color == 'white'
 
     def forward(self, counter=1):
         if self.white():
-            return (self.coordinate[0],  self.coordinate[1] + counter)
+            return (self.x,  self.y + counter)
         else: 
-            return (self.coordinate[0],  self.coordinate[1] - counter)
+            return (self.x,  self.y - counter)
 
     def left(self, counter=1):
         if self.white():
-            return (self.coordinate[0],  self.coordinate[1] + counter)
+            return (self.x,  self.y + counter)
         else: 
-            return (self.coordinate[0],  self.coordinate[1] - counter)
+            return (self.x,  self.y - counter)
 
     def right(self, counter=1):
         if self.white():
-            return (self.coordinate[0],  self.coordinate[1] + counter)
+            return (self.x,  self.y + counter)
         else: 
-            return (self.coordinate[0],  self.coordinate[1] - counter)
+            return (self.x,  self.y - counter)
 
     def take_left(self, counter=1):
         if self.white():
-            return (self.coordinate[0] - counter, self.coordinate[1] + counter)
+            return (self.x - counter, self.y + counter)
         else:
-            return (self.coordinate[0] + counter, self.coordinate[1] - counter)
+            return (self.x + counter, self.y - counter)
 
     def take_right(self, counter=1):
         if self.white():
-            return (self.coordinate[0] + counter, self.coordinate[1] + counter)
+            return (self.x + counter, self.y + counter)
         else:
-            return (self.coordinate[0] - counter, self.coordinate[1] - counter)
+            return (self.x - counter, self.y - counter)
 
         
 
