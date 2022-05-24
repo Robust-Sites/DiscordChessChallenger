@@ -33,43 +33,49 @@ class Pawn(Piece):
         return valid_moves
 
     def at_start(self):
+        x, y = self.x, self.y
         if self.white():
-            return self.y == 1 
+            return y == 1 
         else:
-            return self.y == 6 
+            return y == 6 
 
     def white(self):
         return self.color == 'white'
 
     def forward(self, counter=1):
+        x, y = self.x, self.y
         if self.white():
-            return (self.x,  self.y + counter)
+            return (x,  y + counter)
         else: 
-            return (self.x,  self.y - counter)
+            return (x,  y - counter)
 
     def left(self, counter=1):
+        x, y = self.x, self.y
         if self.white():
-            return (self.x,  self.y + counter)
+            return (x,  y + counter)
         else: 
-            return (self.x,  self.y - counter)
+            return (x,  y - counter)
 
     def right(self, counter=1):
+        x, y = self.x, self.y
         if self.white():
-            return (self.x,  self.y + counter)
+            return (x,  y + counter)
         else: 
-            return (self.x,  self.y - counter)
+            return (x,  y - counter)
 
     def take_left(self, counter=1):
+        x, y = self.x, self.y
         if self.white():
-            return (self.x - counter, self.y + counter)
+            return (x - counter, y + counter)
         else:
-            return (self.x + counter, self.y - counter)
+            return (x + counter, y - counter)
 
     def take_right(self, counter=1):
+        x, y = self.x, self.y
         if self.white():
-            return (self.x + counter, self.y + counter)
+            return (x + counter, y + counter)
         else:
-            return (self.x - counter, self.y - counter)
+            return (x - counter, y - counter)
 
         
 
