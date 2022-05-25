@@ -10,15 +10,15 @@ class Pawn(Piece):
 
 
     def possible_moves(self):
-        possible_moves = []
+        moves = []
         at_start = self.at_start()
 
-        possible_moves.append(self.forward())
-        possible_moves.append(self.take_left())
-        possible_moves.append(self.take_right())
+        moves.append(self.forward())
+        moves.append(self.take_left())
+        moves.append(self.take_right())
         if at_start:  
-            possible_moves.append(self.forward(2))
-        return self.filter_moves_out_of_bounds(possible_moves)
+            moves.append(self.forward(2))
+        return self.filter_moves_out_of_bounds(moves)
 
     #checks for out of bounds not collisions
     @staticmethod

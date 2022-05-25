@@ -1,11 +1,14 @@
 import pytest
 from pawn import Pawn
 
+def assert_tuples(piece, array_of_tuples):
+    for tuple in array_of_tuples:
+        assert tuple in piece.possible_moves()
+
+
 def test_white_center_possible_moves():
     test_pawn = Pawn((3, 3), "white")
-    assert (4,4) in test_pawn.possible_moves()
-    assert (3,4) in test_pawn.possible_moves()
-    assert (2,4) in test_pawn.possible_moves()
+    assert_tuples(test_pawn, [(4, 4), (3, 4), (2, 4)])
 
 
 def test_white_left_border_first_turn_possible_moves():
