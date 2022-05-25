@@ -1,5 +1,5 @@
 from piece import Piece 
-from pytest_helpers import filter_moves_out_of_bounds
+from piece_helpers import filter_moves_out_of_bounds
 
 class Pawn(Piece):
     def __init__(self, coordinate, color):

@@ -1,5 +1,5 @@
 from piece import Piece
-from pytest_helpers import filter_moves_out_of_bounds
+from piece_helpers import filter_moves_out_of_bounds
 
 class King(Piece):
     def __init__(self, coordinate, color):
@@ -10,20 +10,33 @@ class King(Piece):
         self.y = y
     
     def possible_moves(self):
-        moves = []
-        self.move_vertically()
-        self.move_horizontally()
-        self.move_diagonally()
+        moves = [
+            *self.vertical_moves(),
+            *self.horizontal_moves(),
+            *self.diagonal_moves(),
+        ]
         return filter_moves_out_of_bounds(moves)
 
     def vertical_moves(self):
-        pass
+        x, y = self.x, self.y
+        moves = [(x, y + 1), (x, y - 1)]
+        return moves 
     
     def horizontal_moves(self):
-        pass
+        x, y = self.x, self.y
+        moves = [(x + 1, y), (x - 1, y)]
+        return moves
 
     def diagonal_moves(self):
-        pass
+        x, y = self.x, self.y
+        moves = [
+            (x + 1, y + 1), 
+            (x + 1, y - 1),
+            (x - 1, y + 1),
+            (x - 1, y - 1)
+        ]
+        return moves
+
 
 if __name__ == "__main__":
     main()
