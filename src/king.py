@@ -8,7 +8,16 @@ class King(Piece):
         self.x = x
         self.y = y
     
-    def possible_moves():
+    def possible_moves(self):
+        pass
+
+    def move_vertically(self):
+        pass
+    
+    def move_horizontally(self):
+        pass
+
+    def move_diagonally(self):
         pass
 
     def
