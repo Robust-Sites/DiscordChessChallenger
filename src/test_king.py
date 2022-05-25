@@ -1,10 +1,11 @@
-#import pytest
+import pytest
 from pytest_helpers import assert_array_of_tuples
-import piece
-#import king
+from king import King
 
 def test_possible_moves():
-    pass
+    test_king = King((3, 3), "white")
+    assert_array_of_tuples(test_king, [(4, 4),(4, 3),(4, 2),(3, 4),(3, 2),(2, 4),(2, 3),(2, 2)])
+
 def test_left_border_possible_moves():
     pass
 

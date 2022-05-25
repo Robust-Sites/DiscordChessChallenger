@@ -1,4 +1,5 @@
 from piece import Piece 
+from pytest_helpers import filter_moves_out_of_bounds
 
 class Pawn(Piece):
     def __init__(self, coordinate, color):
@@ -18,19 +19,7 @@ class Pawn(Piece):
         moves.append(self.take_right())
         if at_start:  
             moves.append(self.forward(2))
-        return self.filter_moves_out_of_bounds(moves)
-
-    #checks for out of bounds not collisions
-    @staticmethod
-    def filter_moves_out_of_bounds(array_of_possible_moves):
-        valid_moves = []
-        for coordinate in array_of_possible_moves:
-            x, y = coordinate[0], coordinate[1]
-            if (x > 7 or x < 0) or (y > 7 or y < 0):
-                continue
-            else:
-                valid_moves.append(coordinate)
-        return valid_moves
+        return filter_moves_out_of_bounds(moves)
 
     def at_start(self):
         x, y = self.x, self.y
