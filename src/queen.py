@@ -1,14 +1,18 @@
 from piece import Piece 
 
 class Queen(Piece):
-    move_set = [] 
     def __init__(self, coordinate, color):
-        super().__init__(coordinate, color)
+        x = coordinate[0]
+        y = coordinate[1]
+        super().__init__(x, y, color)
+        self.x = x
+        self.y = y
 
     def possible_moves():
-        # this may return an array of all possible target
-        # coordinates
-        pass
+        moves = []
+        return moves
+    
+    
 
 if __name__ == "__main__":
     main()
