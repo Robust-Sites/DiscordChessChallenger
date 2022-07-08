@@ -3,16 +3,14 @@ from piece_helpers import filter_moves_out_of_bounds
 
 class Pawn(Piece):
     def __init__(self, coordinate, color):
-        x = coordinate[0]
-        y = coordinate[1]
+        x, y = coordinate[0], coordinate[1]
         super().__init__(x, y, color)
         self.x = x
         self.y = y
 
 
     def possible_moves(self):
-        moves = []
-        at_start = self.at_start()
+        moves, at_start = [], self.at_start()
 
         moves.append(self.forward())
         moves.append(self.take_left())

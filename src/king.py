@@ -3,8 +3,7 @@ from piece_helpers import filter_moves_out_of_bounds
 
 class King(Piece):
     def __init__(self, coordinate, color):
-        x = coordinate[0]
-        y = coordinate[1]
+        x, y = coordinate[0], coordinate[1]
         super().__init__(x, y, color)
         self.x = x
         self.y = y
