@@ -54,14 +54,15 @@ def test_up_and_left_possible_moves():
     for row in array_of_row_values:
         test_values.append((row, test_rook.y))
     assert_array_of_tuples(test_rook, test_values)
-# def test_down_and_left_possible_moves():
-#     test_rook = Rook((7,7), "black")
-#     test_values = []
-#     array_of_values = chess_line(7)
-#     for number in array_of_values:
-#         test_values.append((7, number))
-#     test_values.append((number, 7))
-#     assert_array_of_tuples(test_rook, test_values)
+
+def test_down_and_left_possible_moves():
+    test_rook = Rook((7,7), "black")
+    test_values = []
+    array_of_values = chess_line(7)
+    for number in array_of_values:
+        test_values.append((7, number))
+    test_values.append((number, 7))
+    assert_array_of_tuples(test_rook, test_values)
 
 # def test_down_and_right_possible_moves():
 #     test_rook = Rook((0,7), "white")
