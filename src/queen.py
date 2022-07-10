@@ -8,7 +8,7 @@ class Queen(Piece):
         self.x = x
         self.y = y
 
-    def possible_moves():
+    def possible_moves(self):
         moves = [
             *self.vertical_moves(),
             *self.horizontal_moves(),
@@ -16,22 +16,28 @@ class Queen(Piece):
         ]
         return moves
 
-    def vertical_moves():
+    def vertical_moves(self):
         x, y  = self.x, self.y
         moves = []
-        for each in chess_line(self.y):
-            moves.append(())
-            
+        y_coordinates = chess_line(y)
+        for num in y_coordinates: 
+            moves.append((x, num))
         return moves 
 
-    def horizontal_moves():
+    def horizontal_moves(self):
         x, y  = self.x, self.y
         moves = []
+        x_coordinates = chess_line(x)
+        for num in x_coordinates: 
+            moves.append((num, y))
         return moves
 
-    def diagonal_moves():
+    def diagonal_moves(self):
         x, y  = self.x, self.y
         moves = []
+        diagonal_coordinates = chess_line(x)
+        for num in diagonal_coordinates:
+            moves.append((num,num))
         return moves 
 
 
