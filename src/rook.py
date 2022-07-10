@@ -2,7 +2,10 @@ from piece import Piece
 
 class Rook(Piece):
     def __init__(self, coordinate, color):
-        super().__init__(coordinate, color)
+        super().__init__(coordinate[0], coordinate[1], color)
+        self.x = coordinate[0]
+        self.y = coordinate[1]
+        self.coordinate = coordinate
         self.if_moved = False
 
     def possible_moves(self):
