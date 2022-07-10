@@ -43,3 +43,15 @@ def test_up_and_right_possible_moves():
         test_values.append((0,number))
         test_values.append((number,0))
     assert_array_of_tuples(test_rook, test_values)
+
+def test_up_and_left_possible_moves():
+    test_rook = Rook((7,0), "black")
+    test_values = []
+    array_of_column_values = return_array_of_numbers_except(0)
+    array_of_row_values = return_array_of_numbers_except(7)
+    for column in array_of_column_values:
+        test_values.append((test_rook.x, column))
+    for row in array_of_row_values:
+        test_values.append((row, test_rook.y))
+    assert_array_of_tuples(test_rook, test_values)
+
