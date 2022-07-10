@@ -18,3 +18,11 @@ def test_right_possible_moves():
     for number in array_of_row_values:
         test_values.append((number, 4)) 
     assert_array_of_tuples(test_rook, test_values)
+
+def test_up_possible_moves():
+    test_rook = Rook((6,0), "black")
+    test_values = []
+    array_of_column_values = return_array_of_numbers_except(0)
+    for number in array_of_column_values:
+        test_values.append((6, number))
+    assert_array_of_tuples(test_rook, test_values)
