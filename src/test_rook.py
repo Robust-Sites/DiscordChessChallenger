@@ -64,13 +64,13 @@ def test_down_and_left_possible_moves():
     test_values.append((number, 7))
     assert_array_of_tuples(test_rook, test_values)
 
-# def test_down_and_right_possible_moves():
-#     test_rook = Rook((0,7), "white")
-#     test_values = []
-#     array_of_column_values = chess_line(0)
-#     array_of_row_values = chess_line(7)
-#     for column in array_of_column_values:
-#         test_values.append((test_rook.x, column))
-#     for row in array_of_row_values:
-#         test_values.append((row, test_rook.y))
-#     assert_array_of_tuples(test_rook, test_values) 
+def test_down_and_right_possible_moves():
+    test_rook = Rook((0,7), "white")
+    test_values = []
+    array_of_column_values = chess_line(0)
+    array_of_row_values = chess_line(7)
+    for column in array_of_column_values:
+        test_values.append((test_rook.x, column))
+    for row in array_of_row_values:
+        test_values.append((row, test_rook.y))
+    assert_array_of_tuples(test_rook, test_values) 
